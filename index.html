@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Page</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1 class="cabecalho">Horario Atual</h1>
+        <p class="descricao"> Controle seu tempo de forma simples e prática.
+            Defina quantos dias, horas, minutos e segundos você precisa, e acompanhe a contagem até o fim.
+            Com um visual moderno e intuitivo, este temporizador foi feito para se adaptar à sua rotina, seja para estudos, trabalho ou momentos especiais.
+            Comece agora e deixe o tempo trabalhar a seu favor!</p>
+
+        
+        <div class="timer">
+            <div class="sub_timer">
+                <h1 id="day" class="digit">00</h1>
+                <p class="digit_name">Dia</p>
+            </div>
+
+            <div class="sub_timer">
+                <h1 id="hour" class="digit">00</h1>
+                <p class="digit_name">Horas</p>
+            </div>
+
+            <div class="sub_timer">
+                <h1 id="min" class="digit">00</h1>
+                <p class="digit_name">Minutos</p>
+            </div>
+
+            <div class="sub_timer">
+                <h1 id="sec" class="digit">00</h1>
+                <p class="digit_name">Segundos</p>
+            </div>
+        </div>
+    </div>
+    
+    <!--javascript -->
+    <script>
+        function timer() {
+            var date = new Date();
+    
+            var day = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+        
+    
+            document.getElementById("day").innerHTML = day;
+            document.getElementById("hour").innerHTML = hour;
+            document.getElementById("min").innerHTML = min;
+            document.getElementById("sec").innerHTML = sec;
+        }
+    
+        timer(); // roda uma vez para atualizar instantâneo
+        setInterval(timer, 1000); // atualiza a cada segundo
+    </script>
+        
+</body>
+</html>
